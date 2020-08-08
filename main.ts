@@ -1,20 +1,33 @@
-let mySprite = sprites.create(img`
-    . . . . . . . f f f f f f f . . . c c f f f . . . . . . . . . . . . . . 
-    . . . . . . f b b b b b b b f f c b b b b f . . . . . . . . . . . . . . 
-    . . . . . . f b b 1 1 1 b b b b b f f b f . . . . . . . . . . . . . . . 
-    . . . . . . f b 1 1 1 1 1 f f b b b b f f . . . . . . . . . . . . . . . 
-    . . . . . . f 1 c c c c 1 f f b b b b b c f f . . . . . . . . . . . . . 
-    . . . . . . f f c 1 c 1 c 1 b b c b c b c c c f . . . . . . . . . . . . 
-    . . . . . . . f c c 3 3 3 1 b b b c b c b c c c f . . c c c c c . . . . 
-    . . . . . . . . c 3 3 3 c 1 b b b c b c b c c c c f c d d b b c . . . . 
-    . . . . . . . . c 3 3 3 c 1 b b b b b b b c c c c c d d b c c . . . . . 
-    . . . . . . . . c 3 3 3 c 1 1 b b b b b c c c c c c b b c c . . . . . . 
-    . . . . . . . c c 3 3 1 c 1 1 b b b b c c c c c c f b c c f . . . . . . 
-    . . . . . . . c c 1 3 c 1 1 c b b b c c c c c b b c f c c f . . . . . . 
-    . . . . . . . c 1 1 1 1 1 1 c b b b f d d d d d c . f b b c f . . . . . 
-    . . . . . . . . c c 1 1 1 1 f b d b b f d d d c . . . f b b f . . . . . 
-    . . . . . . . . . . c c c f f f b d b b f c c . . . . . f b b f . . . . 
-    . . . . . . . . . . . . . . . . f f f f f . . . . . . . . f f f . . . . 
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    console.log("Button A pressed")
+    mySprite.x += 10
+})
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . f f f f . . . . . . . . . . 
+    . . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+    . . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+    . . . . . . . f 1 1 1 1 1 1 1 1 f . . . . . . . 
+    . . . . . . f d 1 1 1 1 1 1 1 1 d f . . . . . . 
+    . . . . 7 . f d 1 1 1 1 1 1 1 1 d f . . . . . . 
+    . . . 7 . . f d 1 1 1 1 1 1 1 1 d f . . . . . . 
+    . . . 7 . . f d 1 1 1 1 1 1 1 1 d f . . . . . . 
+    . . . 7 . . f d d d 1 1 1 1 d d d f f . . . . . 
+    . . . 7 7 . f b d b f d d f b d b f c f . . . . 
+    . . . 7 7 7 f c d c f 1 1 f c d c f b f . . . . 
+    . . . . 7 7 f f f b d b 1 b d f f c f . . . . . 
+    . . . . f c b 1 b c f f f f f f . . . . . . . . 
+    . . . . f 1 c 1 c 1 f f f f f f . . . . . . . . 
+    . . . . f d f d f d f f f f f . . . . . . . . . 
+    . . . . . f . f . f . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 controller.moveSprite(mySprite)

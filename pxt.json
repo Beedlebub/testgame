@@ -2,7 +2,8 @@
     "name": "testGame",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "feather": "*"
     },
     "files": [
         "main.blocks",
